@@ -51,15 +51,16 @@ export class ListMovieComponent implements OnInit, OnDestroy {
     const dialogRef = this.dialogo.open(DetailsMovieComponent, datos);
   }
   /**
-   * hardcode la votación. Use el storage para que no vuelta a votar
-   *
+   * Hardcode la votación.
+   * Use el storage para que no vuelta a votar
    *
    * @param {Movie} element
    * @memberof ListMovieComponent
    */
   onLike(element: Movie) {
     let voto = JSON.parse(localStorage.getItem('votoEmitido'));
-    if (voto) {
+    let id = JSON.parse(localStorage.getItem('votoId'));
+    if (voto && parseInt(id) === element.id) {
       this._matSnackBar.open('Usted ya emitio su voto', '',
         {
           verticalPosition: 'top',
@@ -70,11 +71,11 @@ export class ListMovieComponent implements OnInit, OnDestroy {
     } else {
       element.vote_count += 1;
       localStorage.setItem('votoEmitido', "true");
+      localStorage.setItem('votoId', element.id.toString());
     }
   }
   ngOnDestroy() {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
   }
-
 }

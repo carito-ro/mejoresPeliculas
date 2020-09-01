@@ -1,3 +1,7 @@
 .height80 {
 	max-height: 80vh;
 }
+::ng-deep .notificacion {
+	color: red !important;
+	background: white !important;
+}

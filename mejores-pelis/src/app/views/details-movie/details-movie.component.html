@@ -11,7 +11,7 @@
           {{movie.overview}}
         </h4>
         <mat-card-actions>
-          <button mat-icon-button color="primary">
+          <button mat-icon-button color="primary" (click)="onLike()">
             <mat-icon>thumb_up_alt
             </mat-icon>
           </button><span>Like: {{movie.vote_count}}</span>
