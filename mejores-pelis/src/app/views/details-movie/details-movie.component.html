@@ -1,0 +1,22 @@
+<mat-card class="width400 p-1 m-0">
+  <mat-card-header>
+    <mat-card-title>{{movie.title}}</mat-card-title>
+    <mat-card-subtitle>{{movie.release_date | date: 'dd/MM/yyyy'}}</mat-card-subtitle>
+  </mat-card-header>
+  <perfect-scrollbar>
+    <div class="height80 p-1">
+      <img mat-card-image src="{{urlPoster}}" alt="Photo movie">
+      <mat-card-content class="m-0 p-0">
+        <h4>
+          {{movie.overview}}
+        </h4>
+        <mat-card-actions>
+          <button mat-icon-button color="primary">
+            <mat-icon>thumb_up_alt
+            </mat-icon>
+          </button><span>Like: {{movie.vote_count}}</span>
+        </mat-card-actions>
+      </mat-card-content>
+    </div>
+  </perfect-scrollbar>
+</mat-card>

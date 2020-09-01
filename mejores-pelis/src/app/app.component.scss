@@ -1,0 +1,14 @@
+.rightside-content-hold {
+	padding: 0.333333rem;
+	overflow-x: hidden;
+	position: relative;
+	min-height: 450px;
+}
+.outlet {
+	height: 100vh;
+	position: fixed;
+	top: 70px;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
